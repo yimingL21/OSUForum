@@ -11,28 +11,18 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
-
-<p>
   <strong>Introduction:</strong>
   <%= @user.introduction %>
 </p>
 
 <p>
-  <strong>post_id:</strong>
-  <%= @user.post_id %>
+  <strong>post_ids:</strong>
+  <%= @user.post_ids %>
 </p>
 
 <p>
-  <strong>comment_Ids:</strong>
-  <%= @user.comment_Ids %>
+  <strong>comment_ids:</strong>
+  <%= @user.comment_ids %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

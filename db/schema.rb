@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_16_064721) do
+ActiveRecord::Schema.define(version: 2022_07_16_175230) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "create_time"
@@ -50,13 +50,13 @@ ActiveRecord::Schema.define(version: 2022_07_16_064721) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
     t.boolean "admin"
     t.text "introduction"
     t.text "post_ids"
     t.text "comment_ids"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "comments", "posts"
