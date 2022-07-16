@@ -10,27 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_16_035832) do
+ActiveRecord::Schema.define(version: 2022_07_16_064721) do
 
   create_table "comments", force: :cascade do |t|
-    t.string "respondent_id"
     t.datetime "create_time"
     t.text "content"
-    t.string "post_id"
     t.string "frame_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "titile"
-    t.text "author_id"
+    t.string "title"
     t.datetime "create_time"
     t.text "content"
     t.text "comment_ids"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "subforum_id"
+    t.integer "user_id", null: false
+    t.integer "sub_forum_id", null: false
+    t.index ["sub_forum_id"], name: "index_posts_on_sub_forum_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "sub_forums", force: :cascade do |t|
@@ -49,10 +53,14 @@ ActiveRecord::Schema.define(version: 2022_07_16_035832) do
     t.string "password"
     t.boolean "admin"
     t.text "introduction"
-    t.text "post_id"
+    t.text "post_ids"
     t.text "comment_ids"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "sub_forums"
+  add_foreign_key "posts", "users"
 end

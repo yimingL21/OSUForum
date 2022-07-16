@@ -8,6 +8,7 @@ class SubForumsController < ApplicationController
 
   # GET /sub_forums/1 or /sub_forums/1.json
   def show
+    @sub_forum = SubForum.find(params[:id])
   end
 
   # GET /sub_forums/new

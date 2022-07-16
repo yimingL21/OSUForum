@@ -1,29 +1,26 @@
-<p id="notice"><%= notice %></p>
+<h1>Sub Forums</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @sub_forum.name %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User Name</th>
+      <th>Created Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Description:</strong>
-  <%= @sub_forum.description %>
-</p>
+  <tbody>
+    <% @sub_forum.post_ids.each do |post| %>
+      <tr>
+        <td><%= link_to post.title post%></td>
+        <td><%= link_to post.user.name post.user%></td>
+        <td><%= post.create_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>number_of_posts:</strong>
-  <%= @sub_forum.number_of_posts %>
-</p>
+<br>
 
-<p>
-  <strong>post_id:</strong>
-  <%= @sub_forum.post_id %>
-</p>
-
-<p>
-  <strong>admin_ids:</strong>
-  <%= @sub_forum.admin_ids %>
-</p>
-
-<%= link_to 'Edit', edit_sub_forum_path(@sub_forum) %> |
-<%= link_to 'Back', sub_forums_path %>
+<%= link_to 'New Post', new_post_path %>
