@@ -6,8 +6,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :password
       t.boolean :admin
       t.text :introduction
-      t.text :postIds
-      t.text :commentIds
+      t.text :post_id
+      t.text :comment_Ids
 
       t.timestamps
     end

@@ -10,8 +10,8 @@
       <th>Password</th>
       <th>Admin</th>
       <th>Introduction</th>
-      <th>Postids</th>
-      <th>Commentids</th>
+      <th>post_id</th>
+      <th>comment_Ids</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,8 +24,8 @@
         <td><%= user.password %></td>
         <td><%= user.admin %></td>
         <td><%= user.introduction %></td>
-        <td><%= user.postIds %></td>
-        <td><%= user.commentIds %></td>
+        <td><%= user.post_id %></td>
+        <td><%= user.comment_Ids %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

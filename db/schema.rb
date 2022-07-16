@@ -10,7 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_16_011537) do
+ActiveRecord::Schema.define(version: 2022_07_16_035832) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "respondent_id"
+    t.datetime "create_time"
+    t.text "content"
+    t.string "post_id"
+    t.string "frame_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "titile"
+    t.text "author_id"
+    t.datetime "create_time"
+    t.text "content"
+    t.text "comment_ids"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "subforum_id"
+  end
+
+  create_table "sub_forums", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "number_of_posts"
+    t.text "post_ids"
+    t.text "admin_ids"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -18,8 +49,8 @@ ActiveRecord::Schema.define(version: 2022_07_16_011537) do
     t.string "password"
     t.boolean "admin"
     t.text "introduction"
-    t.text "postIds"
-    t.text "commentIds"
+    t.text "post_id"
+    t.text "comment_ids"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

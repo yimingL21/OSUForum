@@ -6,8 +6,8 @@ one:
   password: MyString
   admin: false
   introduction: MyText
-  postIds: MyText
-  commentIds: MyText
+  post_id: MyText
+  comment_Ids: MyText
 
 two:
   name: MyString
@@ -15,5 +15,5 @@ two:
   password: MyString
   admin: false
   introduction: MyText
-  postIds: MyText
-  commentIds: MyText
+  post_id: MyText
+  comment_Ids: MyText

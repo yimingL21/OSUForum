@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sub_forum.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sub_forum.description %>
+</p>
+
+<p>
+  <strong>number_of_posts:</strong>
+  <%= @sub_forum.number_of_posts %>
+</p>
+
+<p>
+  <strong>post_id:</strong>
+  <%= @sub_forum.post_id %>
+</p>
+
+<p>
+  <strong>admin_ids:</strong>
+  <%= @sub_forum.admin_ids %>
+</p>
+
+<%= link_to 'Edit', edit_sub_forum_path(@sub_forum) %> |
+<%= link_to 'Back', sub_forums_path %>

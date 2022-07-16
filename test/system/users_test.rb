@@ -15,12 +15,12 @@ class UsersTest < ApplicationSystemTestCase
     click_on "New User"
 
     check "Admin" if @user.admin
-    fill_in "Commentids", with: @user.commentIds
+    fill_in "comment_Ids", with: @user.comment_Ids
     fill_in "Email", with: @user.email
     fill_in "Introduction", with: @user.introduction
     fill_in "Name", with: @user.name
     fill_in "Password", with: @user.password
-    fill_in "Postids", with: @user.postIds
+    fill_in "post_id", with: @user.post_id
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -32,12 +32,12 @@ class UsersTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     check "Admin" if @user.admin
-    fill_in "Commentids", with: @user.commentIds
+    fill_in "comment_Ids", with: @user.comment_Ids
     fill_in "Email", with: @user.email
     fill_in "Introduction", with: @user.introduction
     fill_in "Name", with: @user.name
     fill_in "Password", with: @user.password
-    fill_in "Postids", with: @user.postIds
+    fill_in "post_id", with: @user.post_id
     click_on "Update User"
 
     assert_text "User was successfully updated"

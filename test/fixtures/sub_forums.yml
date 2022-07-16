@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  number_of_posts: 1
+  post_id: MyText
+  admin_ids: MyText
+
+two:
+  name: MyString
+  description: MyText
+  number_of_posts: 1
+  post_id: MyText
+  admin_ids: MyText
