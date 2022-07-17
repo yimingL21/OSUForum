@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Sub Forums</h1>
+<h2>sub_forums index page</h2>
 
 <table>
   <thead>
@@ -13,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @sub_forum.post_ids.each do |post| %>
+    <% @sub_forum.posts.each do |post| %>
       <tr>
         <td><%= link_to post.title post%></td>
         <td><%= link_to post.user.name post.user%></td>

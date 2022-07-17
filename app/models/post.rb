@@ -3,4 +3,6 @@ class Post < ApplicationRecord
     belongs_to :sub_forum
     has_many :comments
     serialize :comment_ids, Array
+
+    validates :content, uniqueness: true
 end

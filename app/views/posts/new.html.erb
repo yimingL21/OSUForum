@@ -2,4 +2,10 @@
 
 <%= render 'form', post: @post %>
 
-<%= link_to 'Back', posts_path %>
+<div class="post-tags">
+    <p>SubForum: <%= @post.sub_forum.name %></p>
+    <%# <p>SubForum: <%= @sub_forum.name %></p>
+</div>
+
+<%= link_to 'Back',  @sub_forum %>
+<%# <%= link_to 'Back',  @sub_forum %>
